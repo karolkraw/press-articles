@@ -24,5 +24,4 @@ public interface PressArticleRepository extends JpaRepository<PressArticle, Inte
     @Query("SELECT p FROM PressArticle p LEFT JOIN p.articleContent a " +
             "WHERE a.title LIKE %:keyword% OR a.content LIKE %:keyword%")
     List<PressArticle> getArticlesWithKeyword(@Param("keyword") String keyword);
-
 }
