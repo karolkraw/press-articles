@@ -10,7 +10,7 @@ INSERT INTO `article_content`
 VALUES
     (1,'myTitle','myContent'),
     (2,'this is myTitle','myContent'),
-    (3,'myTitle','this is myContent');
+    (3,'myTitle','thisIsMyContent');
 
 INSERT INTO `press_article`
 (`id`, `name`, `publication_date`, `save_date`,`article_content_id`,`author_id`)

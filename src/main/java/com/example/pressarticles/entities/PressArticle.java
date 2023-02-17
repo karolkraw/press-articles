@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Objects;
+
 @Builder
 @Data
 @NoArgsConstructor
@@ -29,4 +31,17 @@ public class PressArticle {
     private String publicationDate;
 
     private String saveDate;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PressArticle that = (PressArticle) o;
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(author, that.author) && Objects.equals(articleContent, that.articleContent) && Objects.equals(publicationDate, that.publicationDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, author, articleContent, publicationDate, saveDate);
+    }
 }
