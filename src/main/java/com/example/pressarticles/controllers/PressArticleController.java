@@ -35,13 +35,13 @@ public class PressArticleController {
     }
 
     @PatchMapping("/article/{id}")
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.ACCEPTED)
     void updatePressArticle(@RequestBody PressArticle pressArticle, @PathVariable Integer id) {
         pressArticleService.updatePressArticle(id, pressArticle);
     }
 
     @DeleteMapping("/article/{id}")
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.ACCEPTED)
     void deletePressArticleById(@PathVariable Integer id) {
         pressArticleService.deletePressArticleById(id);
     }
@@ -61,9 +61,6 @@ public class PressArticleController {
                 .status(HttpStatus.ACCEPTED)
                 .body(pressArticles);
     }
-
-
-
 
 
 }
