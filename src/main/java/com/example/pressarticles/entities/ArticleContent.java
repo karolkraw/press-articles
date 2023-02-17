@@ -4,9 +4,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Objects;
 
+@Data
+@NoArgsConstructor
 @Entity
 public class ArticleContent {
 
@@ -17,7 +21,7 @@ public class ArticleContent {
     private String title;
     private String content;
 
-    public Integer getId() {
+   /* public Integer getId() {
         return id;
     }
 
@@ -39,9 +43,9 @@ public class ArticleContent {
 
     public void setContent(String content) {
         this.content = content;
-    }
+    }*/
 
-    @Override
+    /*@Override
     public String toString() {
         return "ArticleContent{" +
                 "id=" + id +
@@ -61,5 +65,5 @@ public class ArticleContent {
     @Override
     public int hashCode() {
         return Objects.hash(id, title, content);
-    }
+    }*/
 }

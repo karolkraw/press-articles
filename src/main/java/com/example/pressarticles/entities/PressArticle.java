@@ -1,10 +1,17 @@
 package com.example.pressarticles.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Objects;
 
-
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class PressArticle {
 
@@ -26,7 +33,7 @@ public class PressArticle {
 
     private String saveDate;
 
-    public Integer getId() {
+    /*public Integer getId() {
         return id;
     }
 
@@ -72,10 +79,10 @@ public class PressArticle {
 
     public void setSaveDate(String saveDate) {
         this.saveDate = saveDate;
-    }
+    }*/
 
 
-    @Override
+    /*@Override
     public String toString() {
         return "PressArticle{" +
                 "Id=" + id +
@@ -98,5 +105,5 @@ public class PressArticle {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, author, articleContent, publicationDate, saveDate);
-    }
+    }*/
 }
