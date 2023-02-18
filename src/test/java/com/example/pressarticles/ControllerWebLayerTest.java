@@ -48,24 +48,25 @@ public class ControllerWebLayerTest {
     static void init() {
         Author author1 = Author.builder().id(1).firstName("John1").lastName("Miller1").build();
         ArticleContent articleContent1 = ArticleContent.builder().id(1).content("myContent").title("myTitle").build();
-        String publicationDate1 = LocalDateTime.of(2022, 6, 23, 12, 34).toString();
-        String saveDate1 = LocalDateTime.now().toString();
+        LocalDateTime publicationDate1 = LocalDateTime.of(2022, 6, 23, 12, 34);
+        LocalDateTime saveDate1 = LocalDateTime.now();
         pressArticle = PressArticle.builder().id(1).name("myArticle1")
                 .author(author1).articleContent(articleContent1).saveDate(saveDate1).publicationDate(publicationDate1).build();
 
         Author author2 = Author.builder().id(2).firstName("John2").lastName("Miller2").build();
         ArticleContent articleContent2 = ArticleContent.builder().id(1).content("myContent").title("myTitle").build();
-        String publicationDate2 = LocalDateTime.of(2018, 6, 12, 12, 38).toString();
-        String saveDate2 = LocalDateTime.now().toString();
+        LocalDateTime publicationDate2 = LocalDateTime.of(2018, 6, 12, 12, 38);
+        LocalDateTime saveDate2 = LocalDateTime.now();
         pressArticle2 = PressArticle.builder().id(1).name("myArticle2")
                 .author(author2).articleContent(articleContent2).saveDate(saveDate2).publicationDate(publicationDate2).build();
 
         Author author3 = Author.builder().id(3).firstName("John3").lastName("Miller3").build();
         ArticleContent articleContent3 = ArticleContent.builder().id(1).content("myContent").title("myTitle").build();
-        String publicationDate3 = LocalDateTime.of(2012, 6, 14, 12, 56).toString();
-        String saveDate3 = LocalDateTime.now().toString();
+        LocalDateTime publicationDate3 = LocalDateTime.of(2012, 6, 14, 12, 56);
+        LocalDateTime saveDate3 = LocalDateTime.now();
         pressArticle3 = PressArticle.builder().id(1).name("myArticle3")
                 .author(author3).articleContent(articleContent3).saveDate(saveDate3).publicationDate(publicationDate3).build();
+
     }
 
     @Test

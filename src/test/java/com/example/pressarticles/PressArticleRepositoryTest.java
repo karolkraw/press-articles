@@ -29,9 +29,9 @@ public class PressArticleRepositoryTest {
 
         //then
         assertEquals(3, result.size());
-        assertEquals("2022", result.get(0).getPublicationDate().substring(0, 4));
-        assertEquals("2018", result.get(1).getPublicationDate().substring(0, 4));
-        assertEquals("2012", result.get(2).getPublicationDate().substring(0, 4));
+        assertEquals("2022", result.get(0).getPublicationDate().toString().substring(0, 4));
+        assertEquals("2018", result.get(1).getPublicationDate().toString().substring(0, 4));
+        assertEquals("2012", result.get(2).getPublicationDate().toString().substring(0, 4));
     }
 
     @Test
@@ -39,7 +39,7 @@ public class PressArticleRepositoryTest {
     void should_return_all_articles_with_keyword() {
         //given
         //when
-        List<PressArticle> result = pressArticleRepository.getArticlesWithKeyword("this is");
+        List<PressArticle> result = pressArticleRepository.getArticlesWithKeyword("this");
 
         //then
         assertEquals(2, result.size());

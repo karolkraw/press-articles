@@ -6,14 +6,11 @@ import com.example.pressarticles.entities.PressArticle;
 import com.example.pressarticles.repositories.PressArticleRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -61,8 +58,8 @@ public class PressArticleIntegrationTest {
         //given
         Author author1 = Author.builder().id(1).firstName("John1").lastName("Miller1").build();
         ArticleContent articleContent1 = ArticleContent.builder().id(1).content("myContent").title("myTitle").build();
-        String publicationDate1 = LocalDateTime.of(2022, 6, 23, 12, 34).toString();
-        String saveDate1 = LocalDateTime.now().toString();
+        LocalDateTime publicationDate1 = LocalDateTime.of(2022, 6, 23, 12, 34);
+        LocalDateTime saveDate1 = LocalDateTime.now();
         PressArticle pressArticle = PressArticle.builder().id(1).name("myArticle1")
                 .author(author1).articleContent(articleContent1).saveDate(saveDate1).publicationDate(publicationDate1).build();
 
