@@ -2,6 +2,7 @@ package com.example.pressarticles.services;
 
 import com.example.pressarticles.entities.PressArticle;
 import com.example.pressarticles.repositories.PressArticleRepository;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -17,7 +18,7 @@ public class PressArticleService {
     }
 
     public PressArticle addPressArticle(PressArticle pressArticle) {
-        pressArticle.setSaveDate(LocalDateTime.now().toString());
+        pressArticle.setSaveDate(LocalDateTime.now());
         return pressArticleRepository.save(pressArticle);
     }
 
@@ -41,7 +42,7 @@ public class PressArticleService {
             pressArticleOld.setPublicationDate(pressArticleNew.getPublicationDate());
         }
 
-        pressArticleOld.setSaveDate(LocalDateTime.now().toString());
+        pressArticleOld.setSaveDate(LocalDateTime.now());
         pressArticleRepository.save(pressArticleOld);
     }
 
